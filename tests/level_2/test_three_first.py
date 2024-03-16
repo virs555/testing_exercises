@@ -2,42 +2,21 @@ from functions.level_2.three_first import first
 
 import pytest
 
-def test__first__list_ints():
-    items = [0, 1, 2]
-    default = 1
-
-    result = first(items, default)
-
-    assert result == 0
+def test__first__return_first_item_for_items_is_true():
+    assert first([0, 1, 2], 1) == 0
 
 
-def test__first__without_default():
-    items = [1, 2, 3]
-
-    result = first(items)
-
-    assert result == 1
+def test__first__return_first_item_for_items_is_true_without_default():
+    assert first([1, 2, 3]) == 1
 
 
-def test__first__list_empty_without_default(): #Тут есть сомнения по оформлению
-    items = []
-
+def test__first__raise_error_for_empty_list_without_default_arg():
     with pytest.raises(AttributeError):
-        first(items)
+        first([])
 
 
-def test__first__list_empty_default_none():
-    items = []
-    default = None
+def test__first__return_none_for_empty_list_and_default_argument_is_none():
+    assert first([], None) == None
 
-    result = first(items, default)
-
-    assert result == None
-
-def test__first__list_empty_default_int():
-    items = []
-    default = 123
-
-    result = first(items, default)
-
-    assert result == 123
+def test__first__return_default_for_unknown_default():
+    assert first([], 123) == 123
