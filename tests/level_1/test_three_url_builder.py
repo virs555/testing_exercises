@@ -11,7 +11,7 @@ def test__build_url__return_full_url_without_params_if_dict_empty():
     assert build_url('avito.ru', 'beauty', {}) == 'avito.ru/beauty'
 
 def test__build_url__dont_return_params_delimeters_if_dict_empty():
-    assert not build_url('avito.ru', 'beauty', {}) == 'avito.ru/beauty?'
+    assert build_url('avito.ru', 'beauty', {}) != 'avito.ru/beauty?'
 
 def test__build_url__return_url_if_host_empty():
     assert build_url('', 'beauty', {}) == '/beauty'
