@@ -7,5 +7,5 @@ def test__genderalize__return_verb_male_if_gender_male():
 def test__genderalize__return_verb_female_if_gender_female():
     assert genderalize('Бежал', 'Бежала', 'female') == 'Бежала'
 
-def test__genderalize__return_verb_female_if_gender_random():
+def test__genderalize__return_verb_female_if_gender_unknown():
     assert genderalize('Бежал', 'Бежала', 'any_string') == 'Бежала'

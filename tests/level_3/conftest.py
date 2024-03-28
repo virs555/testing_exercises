@@ -25,3 +25,7 @@ def create_expense():
         )
     
     return expense
+
+@pytest.fixture
+def trigger():
+    return ('netflix')
